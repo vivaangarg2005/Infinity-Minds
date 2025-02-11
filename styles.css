@@ -1,0 +1,152 @@
+body {
+  font-family: Arial, sans-serif;
+  text-align: center;
+  background: rgb(255, 255, 255);
+  background: radial-gradient(
+    circle,
+    rgba(255, 255, 255, 1) 0%,
+    rgba(148, 187, 233, 1) 100%
+  );
+  margin: 20px;
+  transition: background-color 0.5s ease-in-out;
+}
+
+header {
+  background: rgba(255, 255, 255, 0.8); /* Soft white with transparency */
+  color: #2f4f4f;
+  padding: 10px;
+  border-radius: 10px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+  opacity: 0.8;
+}
+
+/* Heading Styling */
+h1 {
+  color: #ff4747;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+h2 {
+  color: #000000;
+}
+
+#score {
+  font-weight: bold;
+  color: #ff4500;
+  font-size: 24px;
+}
+
+/* Buttons */
+button {
+  padding: 12px;
+  margin: 5px;
+  cursor: pointer;
+  background: linear-gradient(to right, #4caf50, #2e8b57);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 18px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+}
+
+button:hover {
+  background: linear-gradient(to right, #2e8b57, #4caf50);
+}
+
+/* Grid Layout for Options */
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 15px;
+  max-width: 400px;
+  margin: auto;
+  animation: fadeIn 0.5s ease;
+}
+
+.grid-container button {
+  padding: 15px;
+  font-size: 18px;
+  cursor: pointer;
+  background: rgba(255, 255, 255, 0.9); /* Slight transparency */
+  border: 2px solid #007bff;
+  border-radius: 8px;
+  color: black;
+  font-weight: bold;
+  transition: all 0.3s ease;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.grid-container button:hover {
+  background: #007bff;
+  color: white;
+}
+
+/* Light Green and Red for Answer Feedback */
+.correct {
+  background: #8bc34a !important; /* Light Green */
+  color: white !important;
+}
+
+.wrong {
+  background: #ff6347 !important; /* Light Red */
+  color: white !important;
+}
+
+/* Score Circle */
+/* Score Circle (already in your CSS) */
+.score-circle {
+  width: 150px;
+  height: 150px;
+  background: rgba(255, 255, 255, 0.9);
+  color: #2f4f4f;
+  font-size: 36px;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  margin: 20px auto;
+  position: relative;  /* Make it a containing block for absolutely positioned children */
+  border: 5px solid #28a745;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* New: Horizontal Line Positioned in the Center of the Score Circle */
+.score-line {
+  position: absolute;
+  top: 50%;               /* Vertically center the line */
+  left: 10%;              /* Leave a little space on both sides */
+  right: 10%;
+  height: 2px;            /* Thickness of the line */
+  background: black;     /* Same as the border color for consistency */
+  transform: translateY(-50%);  /* Adjust for perfect centering */
+  z-index: 0;             /* Ensure it stays behind the score text */
+}
+
+/* Ensure Score Text is above the line */
+.score-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  z-index: 1;             /* Bring text to the front */
+}
+
+/* Smooth Fade-In Animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Quiz Result Animation */
+#quiz-result {
+  font-size: 20px;
+  font-weight: bold;
+  animation: fadeIn 0.5s ease-in-out;
+}

@@ -84,12 +84,12 @@ function nextQuestion() {
 function showFinalScore() {
     let totalScore = questions.length * 4;
     document.getElementById("quiz").innerHTML = `
-        <p>Your Final Score</p>
+        <p style="font-size: 28px; font-weight: bold;">Your Final Score</p>
         <div class="score-circle">
             <div class="score-line"></div>
-            <div class="score-text">${score}<br> ${totalScore}</div>
+            <div class="score-text" style="font-size: 28px;">${score}<br> ${totalScore}</div>
         </div>
-        <h2>Quiz Completed!</h2>
+        <h2 style="font-size: 28px;">Quiz Completed!</h2>
         <button onclick="restartQuiz()" class="btn">Restart Quiz</button>
         <button onclick="goHome()" class="btn home-btn">Home</button>
     `;

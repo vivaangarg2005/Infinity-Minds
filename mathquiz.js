@@ -90,8 +90,14 @@ function showFinalScore() {
             <div class="score-text">${score}<br> ${totalScore}</div>
         </div>
         <h2>Quiz Completed!</h2>
-        <button onclick="restartQuiz()">Restart Quiz</button>
+        <button onclick="restartQuiz()" class="btn">Restart Quiz</button>
+        <button onclick="goHome()" class="btn home-btn">Home</button>
     `;
+}
+
+// Function to go to home page
+function goHome() {
+    window.location.href = "frontpage.html"; 
 }
 
 

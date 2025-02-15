@@ -192,3 +192,11 @@ button:hover {
   background: linear-gradient(to right, #007bff, #00eaff);
   box-shadow: 0px 4px 15px rgba(0, 238, 255, 0.6);
 }
+.quiz-description{
+  font-size: 18px;
+  color:#ddd;
+  margin-bottom: 20px;
+  line-height: 1.3;
+}
+
+

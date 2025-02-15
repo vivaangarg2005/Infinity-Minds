@@ -1,20 +1,35 @@
-const questions = [
+const knowledgeQuestions = [
     { question: "Who is known as the 'Father of Geometry'?", options: ["Archimedes", "Euclid", "Pythagoras", "Newton"], answer: "Euclid" },
     { question: "Which Greek mathematician is known for his work in conic sections?", options: ["Euclid", "Archimedes", "Ptolemy", "Apollonius"], answer: "Apollonius" },
-    { question: "Which mathematician is famous for the Fibonacci sequence?", options: ["Fibonacci", "Gauss", "Euler", "Pascal"], answer: "Fibonacci" },
+    { question: "Which mathematician formulated the fundamental theorem of algebra?", options: ["Gauss", "Euler", "Newton", "Lagrange"], answer: "Gauss" },
     { question: "Who developed the first systematic method for solving quadratic equations?", options: ["Al-Khwarizmi", "Euclid", "Descartes", "Archimedes"], answer: "Al-Khwarizmi" },
-    { question: "Which mathematician introduced the method of exhaustion to calculate areas and volumes?", options: ["Euclid", "Archimedes", "Eratosthenes", "Pythagoras"], answer: "Archimedes" },
-    { question: "Which famous mathematician formulated the laws of motion and universal gravitation?", options: ["Kepler", "Galileo", "Newton", "Leibniz"], answer: "Newton" },
-    { question: "The number '0' was first treated as a number by which civilization?", options: ["Greek", "Egyptian", "Indian", "Roman"], answer: "Indian" },
-    { question: "Who introduced the concept of imaginary numbers (i = √-1)?", options: ["Euler", "Gauss", "Descartes", "Cardano"], answer: "Cardano" },
-    { question: "The Pythagorean Theorem applies to which type of triangle?", options: ["Equilateral", "Isosceles", "Right-angled", "Scalene"], answer: "Right-angled" },
-    { question: "Which ancient mathematician is credited with approximating the value of π (pi)?", options: ["Euclid", "Pythagoras", "Archimedes", "Eratosthenes"], answer: "Archimedes" }
+    { question: "Which mathematician developed the concept of limits and continuity in calculus?", options: ["Newton", "Leibniz", "Cauchy", "Fourier"], answer: "Cauchy" },
+    { question: "Which famous mathematician developed the binomial theorem?", options: ["Pascal", "Newton", "Euler", "Fermat"], answer: "Newton" },
+    { question: "Which mathematical field studies prime numbers and their properties?", options: ["Topology", "Algebra", "Number Theory", "Graph Theory"], answer: "Number Theory" },
+    { question: "Which ancient method is used to find the greatest common divisor of two numbers?", options: ["Newton’s Method", "Euclidean Algorithm", "Lagrange’s Theorem", "Fourier Transform"], answer: "Euclidean Algorithm" },
+    { question: "What is the branch of mathematics that deals with shapes, sizes, and properties of space?", options: ["Algebra", "Calculus", "Geometry", "Statistics"], answer: "Geometry" },
+    { question: "Which theorem states that in a right-angled triangle, the square of the hypotenuse is equal to the sum of the squares of the other two sides?", options: ["Fermat's Theorem", "Euler’s Formula", "Pythagorean Theorem", "Gauss’s Law"], answer: "Pythagorean Theorem" }
+];
+
+
+const triviaQuestions = [
+    { question: "Which ancient Greek mathematician is credited with measuring the Earth's circumference using shadows?", options: ["Eratosthenes", "Ptolemy", "Euclid", "Archimedes"], answer: "Eratosthenes" },
+    { question: "Which mathematician formulated the famous Last Theorem that remained unsolved for 358 years?", options: ["Carl Friedrich Gauss", "Pierre de Fermat", "Leonhard Euler", "Isaac Newton"], answer: "Pierre de Fermat" },
+    { question: "Which Indian mathematician is known for his work on infinite series and continued fractions?", options: ["Aryabhata", "Srinivasa Ramanujan", "Brahmagupta", "Bhaskara I"], answer: "Srinivasa Ramanujan" },
+    { question: "Which mathematician's famous 'Eureka!' moment led to the principle of buoyancy?", options: ["Euclid", "Pythagoras", "Archimedes", "Thales"], answer: "Archimedes" },
+    { question: "Which mathematician introduced the concept of imaginary numbers (i = √-1)?", options: ["Euler", "Gauss", "Descartes", "Cardano"], answer: "Cardano" },
+    { question: "Which mathematician's name is associated with a sequence that appears in nature, such as the arrangement of sunflower seeds?", options: ["Fibonacci", "Gauss", "Euler", "Pascal"], answer: "Fibonacci" },
+    { question: "Which female mathematician was one of the first known scholars of mathematics in ancient history?", options: ["Hypatia", "Sophie Germain", "Ada Lovelace", "Emmy Noether"], answer: "Hypatia" },
+    { question: "Which French mathematician and philosopher contributed significantly to probability theory and has a triangle named after him?", options: ["René Descartes", "Blaise Pascal", "Joseph Fourier", "Pierre-Simon Laplace"], answer: "Blaise Pascal" },
+    { question: "Who is known for formulating the concept of mathematical groups, which became fundamental in abstract algebra?", options: ["Évariste Galois", "Joseph Fourier", "Carl Friedrich Gauss", "John von Neumann"], answer: "Évariste Galois" },
+    { question: "Which famous Swiss mathematician made significant contributions to graph theory, including the Seven Bridges of Königsberg problem?", options: ["Gauss", "Euler", "Fermat", "Pascal"], answer: "Euler" }
 ];
 
 
 const optionLetters = ["A", "B", "C", "D"];
 let currentQuestionIndex = 0;
 let score = 0;
+let questions = [];
 
 function shuffleArray(array) {
     for (let i = array.length - 1; i > 0; i--) {
@@ -23,7 +38,16 @@ function shuffleArray(array) {
     }
 }
 
-shuffleArray(questions);
+function startQuiz(mode) {
+    document.getElementById("mode-selection").style.display = "none";
+    document.getElementById("quiz").style.display = "block";
+    questions = mode === "knowledge" ? [...knowledgeQuestions] : [...triviaQuestions];
+    shuffleArray(questions);
+    loadQuestion();
+}
+
+document.getElementById("test-knowledge").addEventListener("click", () => startQuiz("knowledge"));
+document.getElementById("maths-trivia").addEventListener("click", () => startQuiz("trivia"));
 
 function updateScore(points) {
     score += points;
@@ -71,8 +95,7 @@ function checkAnswer(selectedAnswer, button) {
         button.style.backgroundColor = "#e84c4d";
         button.style.borderColor = "#8B0000";
 
-        const buttons = document.querySelectorAll(".grid-container button");
-        buttons.forEach(btn => {
+        document.querySelectorAll(".grid-container button").forEach(btn => {
             if (btn.textContent.includes(correctAnswer)) {
                 btn.style.backgroundColor = "#1dd074";
                 btn.style.borderColor = "#008000";
@@ -118,4 +141,6 @@ function restartQuiz() {
     loadQuestion();
 }
 
-document.addEventListener("DOMContentLoaded", loadQuestion);
+document.addEventListener("DOMContentLoaded", () => {
+    document.getElementById("quiz").style.display = "none";
+});

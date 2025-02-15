@@ -21,7 +21,7 @@ function loadQuestion() {
     }
     
     document.getElementById("question").textContent = questions[currentQuestionIndex].question;
-    document.getElementById("question-counter").textContent = `Question ${currentQuestionIndex + 1}/${questions.length}`;
+    document.getElementById("question-counter").textContent = `Question ${currentQuestionIndex + 1}/${questions.length}:`;
     
     const optionsElement = document.getElementById("options");
     optionsElement.innerHTML = ""; 

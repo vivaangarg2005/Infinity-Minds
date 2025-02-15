@@ -16,7 +16,6 @@ header {
   font-size: 22px;
 }
 
-/* Heading Styling */
 h1 {
   color: #00eaff;
   text-shadow: 0 0 10px #00eaff, 0 0 20px #00eaff;
@@ -26,24 +25,21 @@ h2 {
   color: #ffffff;
 }
 
-/* Increase Question Font Size */
 #question {
   font-size: 28px;
   font-weight: bold;
   margin-bottom: 20px;
 }
 
-/* Score Text */
 #score {
   font-weight: bold;
   color: #ffcc00;
   font-size: 24px;
 }
 
-/* Larger Next Button */
 #next-btn {
-  padding: 16px 32px; /* Increase padding */
-  font-size: 22px; /* Increase font size */
+  padding: 16px 32px;
+  font-size: 22px;
   font-weight: bold;
   background: linear-gradient(to right, #00eaff, #007bff);
   border-radius: 10px;
@@ -56,7 +52,6 @@ h2 {
   box-shadow: 0px 4px 18px rgba(0, 238, 255, 0.7);
 }
 
-/* Buttons */
 button {
   padding: 12px;
   margin: 5px;
@@ -75,7 +70,6 @@ button:hover {
   box-shadow: 0px 4px 15px rgba(0, 238, 255, 0.6);
 }
 
-/* Grid Layout for Options */
 .grid-container {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -85,7 +79,6 @@ button:hover {
   animation: fadeIn 0.5s ease;
 }
 
-/* Increase Option Button Font Size */
 .grid-container button {
   padding: 20px;
   font-size: 22px;
@@ -104,7 +97,6 @@ button:hover {
   color: black;
 }
 
-/* Answer Feedback */
 .correct {
   background: #32cd32 !important;
   color: white !important;
@@ -115,7 +107,6 @@ button:hover {
   color: white !important;
 }
 
-/* Score Circle */
 .score-circle {
   width: 150px;
   height: 150px;
@@ -133,7 +124,6 @@ button:hover {
   box-shadow: 0px 0px 15px #ffcc00;
 }
 
-/* Horizontal Line in Score Circle */
 .score-line {
   position: absolute;
   top: 50%;
@@ -145,7 +135,6 @@ button:hover {
   z-index: 0;
 }
 
-/* Ensure Score Text is Above */
 .score-text {
   position: absolute;
   top: 50%;
@@ -155,7 +144,6 @@ button:hover {
   z-index: 1;
 }
 
-/* Smooth Fade-In Animation */
 @keyframes fadeIn {
   from {
     opacity: 0;
@@ -165,7 +153,6 @@ button:hover {
   }
 }
 
-/* Quiz Result Animation */
 #quiz-result {
   font-size: 22px;
   font-weight: bold;
@@ -174,7 +161,6 @@ button:hover {
   animation: fadeIn 0.5s ease-in-out;
 }
 
-/* General Button Styling */
 .btn {
   padding: 16px 32px;
   font-size: 22px;
@@ -187,7 +173,6 @@ button:hover {
   box-shadow: 0px 4px 10px rgba(0, 238, 255, 0.4);
 }
 
-/* Restart Button */
 .btn:first-of-type {
   background: linear-gradient(to right, #00eaff, #007bff);
   color: white;
@@ -198,7 +183,6 @@ button:hover {
   box-shadow: 0px 4px 15px rgba(0, 238, 255, 0.6);
 }
 
-/* Home Button */
 .home-btn {
   background: linear-gradient(to right, #00eaff, #007bff);
   color: white;

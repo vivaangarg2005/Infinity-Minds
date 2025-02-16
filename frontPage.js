@@ -2,7 +2,7 @@ document.querySelectorAll('.navbar nav ul li a').forEach(link => {
     link.addEventListener('click', event => {
         const targetId = event.target.getAttribute('href');
 
-        if (targetId.startsWith("http") || targetId.includes("mathquiz.html") || targetId.includes("personalityquiz.html") || targetId.includes("discussion.html")) {
+        if (targetId.startsWith("http") || targetId.includes("timeline.html")|| targetId.includes("mathquiz.html") || targetId.includes("personalityquiz.html") || targetId.includes("discussion.html")) {
             return;
         }
         

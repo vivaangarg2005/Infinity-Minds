@@ -2,9 +2,10 @@ document.querySelectorAll('.navbar nav ul li a').forEach(link => {
     link.addEventListener('click', event => {
         const targetId = event.target.getAttribute('href');
 
-        if (targetId.startsWith("http") || targetId.includes("mathquiz.html") || targetId.includes("personalityquiz.html")) {
+        if (targetId.startsWith("http") || targetId.includes("mathquiz.html") || targetId.includes("personalityquiz.html") || targetId.includes("discussion.html")) {
             return;
         }
+        
 
         event.preventDefault();
         const targetElement = document.getElementById(targetId.substring(1));
@@ -24,6 +25,9 @@ document.getElementById("mathquiz")?.addEventListener("click", () => {
 
 document.getElementById("personality")?.addEventListener("click", () => {
     window.open("personalityquiz.html", "_blank");
+});
+document.getElementById("discussion")?.addEventListener("click", () => {
+    window.open("discussion.html", "_blank");
 });
 
 const observer = new IntersectionObserver((entries) => {

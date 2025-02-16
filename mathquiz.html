@@ -1,36 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Math Quiz</title>
-    <link rel="stylesheet" href="mathquiz.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Math Quiz</title>
+  <link rel="stylesheet" href="mathquiz.css" />
 </head>
 <body>
 
-    <header>
-        <h1>Math Quiz</h1>
-    </header>
-    
-    <div id="mode-selection">
-        <h2>Select Quiz Mode</h2>
-        
-        <button class="btn" onclick="startQuiz('knowledge')" title="Challenge your math skills with problem-solving questions!">Test Your Knowledge</button>
-        <button class="btn" onclick="startQuiz('trivia')" title="Discover intriguing facts about famous mathematicians!">Mathematicians Trivia</button>
-        <p class="quiz-description">
-            ( If you want to challenge your math skills, go for <strong>"Test Your Knowledge."</strong><br>
-            If you love fascinating math stories, <strong>"Mathematicians Trivia"</strong> is for you! )
-        </p>
-    </div>
+  <header>
+    <h1>Math Quiz</h1>
+  </header>
+  
+  <div id="mode-selection">
+    <h2>Select Quiz Mode</h2>
+    <button class="btn" onclick="startQuiz('knowledge')" title="Challenge your math skills with problem-solving questions!">
+      Test Your Knowledge
+    </button>
+    <button class="btn" onclick="startQuiz('trivia')" title="Discover intriguing facts about famous mathematicians!">
+      Mathematicians Trivia
+    </button>
+    <p class="quiz-description">
+      ( If you want to challenge your math skills, go for <strong>"Test Your Knowledge."</strong><br>
+      If you love fascinating math stories, <strong>"Mathematicians Trivia"</strong> is for you! )
+    </p>
+  </div>
 
-    <div id="quiz" style="display: none;">
-        <h2 id="question"></h2>
-        <div id="options" class="grid-container"></div>
-        <p id="quiz-result"></p>
-        <p>Score: <span id="score">0</span></p>
-        <button id="next-btn" onclick="nextQuestion()">Next</button>
-    </div>
+  <div id="quiz" style="display: none;">
+    <h2 id="question"></h2>
+    <div id="options" class="grid-container"></div>
+    <p id="quiz-result"></p>
+    <p>Score: <span id="score">0</span></p>
+    <button id="next-btn" onclick="nextQuestion()">Next</button>
+    <button id="end-btn" onclick="endQuiz()">End Quiz</button>
+  </div>
 
-    <script src="mathquiz.js"></script>
+  <script src="mathquiz.js"></script>
+  
 </body>
 </html>

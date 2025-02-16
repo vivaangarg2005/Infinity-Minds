@@ -7,6 +7,10 @@
 }
 body{
     display: flex;
+    background: radial-gradient(circle, #0b132b 0%, #1c2541 100%);
+    margin: 20px;
+    transition: background-color 0.5s ease-in-out;
+    color: white;
 } 
 .scroll{
     height: 5px;
@@ -42,12 +46,13 @@ body{
     margin: 20px;
     border-radius: 25px;
     font-family: 'Playfair Display';
+    color:whitesmoke; 
 }
 .timeline__components--bg:hover{
     box-shadow: 0 0 7px black;
 }
 .timeline__components--bg h1{
-    color: rgb(0, 0, 0);
+    
     transition: all 0.3s ease 0s;
     cursor: default;
     max-width: max-content;
@@ -55,6 +60,7 @@ body{
     white-space: nowrap; /* Keeps the content on a single line */
     margin: 0 auto; /* Gives that scrolling effect as the typing happens */
     animation: typing 3.5s steps(40, end);
+    color:whitesmoke; 
 }
 @keyframes typing {
     from { width: 0 }
@@ -67,13 +73,15 @@ body{
 }
 .timeline__components{
     margin: 0 20px 20px 20px;
+    color:whitesmoke; 
 
 }
 .timeline__date--right{
      text-align: right;
      font-family: 'Archivo Black';
      font-size: larger;
-     transition: all 0.3s ease 0s;  
+     transition: all 0.3s ease 0s; 
+     color:whitesmoke; 
 }
 .timeline__date--right:hover{
     font-size: x-large;
@@ -83,6 +91,7 @@ body{
 .timeline__middle{
     position: relative;
     background: black;
+    color:whitesmoke; 
     
 }
 .timeline__point{
@@ -94,12 +103,14 @@ body{
     height: 15px;
     background: black;
     border-radius: 50%;
+    color:whitesmoke; 
 }
 
 .timeline__components--bg img{
     max-width: 60%;
     max-height: fit-content;
     border-radius: 100%;
+    color:whitesmoke; 
 }
 .timeline__components--bg button{
     display: flex;
@@ -110,4 +121,5 @@ body{
     border: none;
     background-color: inherit;
     margin-bottom: 5px;
+    color:whitesmoke; 
 }
